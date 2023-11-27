@@ -62,56 +62,90 @@ struct LoginView: View {
                             .accessibilityIdentifier("Error")
                     }
                     
-                    Button {
-                        if vm.userName != "", vm.passWord != "" {
-                            let userID = UUID().uuidString
-                            let userModel = UserModel(userID: userID, userName: vm.userName, passWord: vm.passWord)
-                            dataStore.pushAcount(userModel: userModel) {
-                                UserDefaults.standard.set(true, forKey: "isLogin")
-                                UserDefaults.standard.set(userID, forKey: "userID")
-                                UserDefaults.standard.set(vm.userName, forKey: "userName")
+                    if vm.isSignUp {
+                        Button {
+                            if vm.userName != "", vm.passWord != "" {
+                                let userID = UUID().uuidString
+                                let userModel = UserModel(userID: userID, userName: vm.userName, passWord: vm.passWord)
+                                dataStore.pushAcount(userModel: userModel) {
+                                    UserDefaults.standard.set(true, forKey: "isLogin")
+                                    UserDefaults.standard.set(userID, forKey: "userID")
+                                    UserDefaults.standard.set(vm.userName, forKey: "userName")
+                                }
+                            } else {
+                                vm.error = "Username or password cannot be blank"
                             }
-                        } else {
-                            vm.error = "Username or password cannot be blank"
+                        } label: {
+                            Text("Sign Up")
+                                .font(.system(size: 20, weight: .bold))
+                                .padding(15)
+                                .frame(maxWidth: .infinity)
+                                .background {
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .fill(Color(hex: "343436"))
+                                }
+                                .padding(.horizontal, 40)
+                                .foregroundStyle(Color.white)
                         }
-                    } label: {
-                        Text("Sign Up")
-                            .font(.system(size: 20, weight: .bold))
-                            .padding(15)
-                            .frame(maxWidth: .infinity)
-                            .background {
-                                RoundedRectangle(cornerRadius: 15)
-                                    .fill(Color(hex: "343436"))
-                            }
-                            .padding(.horizontal, 40)
-                            .foregroundStyle(Color.white)
-                    }
-                    .buttonStyle(.plain)
-                    .padding(.top, 150)
-                    .accessibilityIdentifier("SignUp")
-                    Text("Or \(vm.isSignUp ? "SignIn with account" : "")")
-                        .font(.system(size: 16, weight: .bold))
-                        .foregroundStyle(Color.secondary)
-                        .padding(.top, 50)
-                    Button {
-                        if vm.userName != "", vm.passWord != "" {
-                            dataStore.login(userName: vm.userName, password: vm.passWord) { userModel in
-                                UserDefaults.standard.set(true, forKey: "isLogin")
-                                UserDefaults.standard.set(userModel.userID, forKey: "userID")
-                                UserDefaults.standard.set(userModel.userName, forKey: "userName")
-                            } failure: { error in
-                                self.vm.error = error
-                            }
-                        } else {
-                            vm.error = "Username or password cannot be blank"
+                        .buttonStyle(.plain)
+                        .padding(.top, 150)
+                        .accessibilityIdentifier("SignUp")
+                        Text("Or Sign In with account")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundStyle(Color.secondary)
+                            .padding(.top, 50)
+                        Button {
+                            vm.isSignUp = false
+                        } label: {
+                            Text("Sign in")
+                                .foregroundStyle(Color.black)
+                                .font(.system(size: 18, weight: .bold))
                         }
-                    } label: {
-                        Text("Sign in")
-                            .foregroundStyle(Color.black)
-                            .font(.system(size: 18, weight: .bold))
+                        .buttonStyle(.plain)
+                        .accessibilityIdentifier("SignIn")
+                    } else {
+                        Button {
+                            if vm.userName != "", vm.passWord != "" {
+                                dataStore.login(userName: vm.userName, password: vm.passWord) { userModel in
+                                    UserDefaults.standard.set(true, forKey: "isLogin")
+                                    UserDefaults.standard.set(userModel.userID, forKey: "userID")
+                                    UserDefaults.standard.set(userModel.userName, forKey: "userName")
+                                } failure: { error in
+                                    self.vm.error = error
+                                }
+                            } else {
+                                vm.error = "Username or password cannot be blank"
+                            }
+                        } label: {
+                            Text("Sign In")
+                                .font(.system(size: 20, weight: .bold))
+                                .padding(15)
+                                .frame(maxWidth: .infinity)
+                                .background {
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .fill(Color(hex: "343436"))
+                                }
+                                .padding(.horizontal, 40)
+                                .foregroundStyle(Color.white)
+                        }
+                        .buttonStyle(.plain)
+                        .padding(.top, 150)
+                        .accessibilityIdentifier("SignIn")
+                        Text("Or")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundStyle(Color.secondary)
+                            .padding(.top, 50)
+                        Button {
+                            vm.isSignUp = true
+                        } label: {
+                            Text("SignUp")
+                                .foregroundStyle(Color.black)
+                                .font(.system(size: 18, weight: .bold))
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityIdentifier("SignUp")
                     }
-                    .buttonStyle(.plain)
-                    .accessibilityIdentifier("SignIn")
+                    
                 }
                 .frame(minHeight: proxy.size.height ,alignment: .top)
             }

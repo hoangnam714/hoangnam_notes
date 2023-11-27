@@ -49,7 +49,12 @@ struct NotesView: View {
                 } else {
                     LazyVGrid(columns: columns, spacing: 10) {
                         ForEach(notes, id: \.id ) { item in
-                            noteItemView(noteModel: item)
+                            NavigationLink {
+                                NoteDetailView(noteModel: item)
+                            } label: {
+                                noteItemView(noteModel: item)
+                            }
+                            .buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
