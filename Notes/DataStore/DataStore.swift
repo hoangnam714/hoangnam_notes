@@ -45,7 +45,7 @@ class DataStore: ObservableObject {
                     return
                 }
                _ = value.compactMap { key, value in
-                    if let _ = value["passWord"]   {
+                    if let _password = value["passWord"] , password == _password {
                         let userName = value["userName"]
                         let userModel = UserModel(userID: snapShot.key, userName: userName ?? "", passWord: "")
                         completion(userModel)

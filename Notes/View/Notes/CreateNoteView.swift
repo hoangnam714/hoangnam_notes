@@ -26,7 +26,7 @@ struct CreateNoteView: View {
                                 .stroke(Color.gray.opacity(0.5), lineWidth: 1)
                         }
                         .padding(.bottom, 15)
-                        .accessibilityIdentifier("tf_name")
+                        .accessibilityIdentifier("NoteName")
                     Text("Description: ")
                         .font(.headline)
                     TextEditor(text: $vm.description)
@@ -35,7 +35,7 @@ struct CreateNoteView: View {
                             RoundedRectangle(cornerRadius: 8)
                                 .stroke(Color.gray.opacity(0.5), lineWidth: 1)
                         }
-                        .accessibilityIdentifier("tf_description")
+                        .accessibilityIdentifier("NoteDescription")
                 }
                 Button {
                     if vm.noteName != "" {
@@ -65,7 +65,7 @@ struct CreateNoteView: View {
                 }
                 .buttonStyle(.plain)
                 .padding(.top, 15)
-                .accessibilityIdentifier("btn_create")
+                .accessibilityIdentifier("CreateNewNote")
             }
             .padding(25)
             .background(Color.white)
@@ -89,6 +89,7 @@ struct CreateNoteView: View {
                         .frame(width: 20, height: 20)
                 }
                 .buttonStyle(.plain)
+                .accessibilityIdentifier("BackButton")
             }
         }
     }

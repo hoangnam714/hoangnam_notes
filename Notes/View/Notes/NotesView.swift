@@ -26,6 +26,7 @@ struct NotesView: View {
                         .frame(width: 25, height: 25)
                 }
                 .buttonStyle(.plain)
+                .accessibilityIdentifier("CreateNote")
             }
             .padding(.trailing, 20)
             

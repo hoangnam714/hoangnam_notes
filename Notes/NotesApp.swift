@@ -34,6 +34,7 @@ struct NotesApp: App {
                     .opacity(isLogin ? 1 : 0)
                     .zIndex(1)
             }
+            .preferredColorScheme(.light)
             .environmentObject(dataStore)
         }
     }

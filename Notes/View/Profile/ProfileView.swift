@@ -38,7 +38,6 @@ struct ProfileView: View {
                     .frame(alignment: .center)
             }
             .padding(.top, 200)
-            .accessibilityIdentifier("btn_log_out")
             
             Spacer()
         }

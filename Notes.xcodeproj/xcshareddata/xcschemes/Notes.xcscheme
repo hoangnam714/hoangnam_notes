@@ -34,7 +34,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "84633F742B145230000FE416"
+               BlueprintIdentifier = "84633FC62B14554B000FE416"
                BuildableName = "NotesUITests.xctest"
                BlueprintName = "NotesUITests"
                ReferencedContainer = "container:Notes.xcodeproj">
@@ -45,7 +45,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "84633F832B14523A000FE416"
+               BlueprintIdentifier = "844188D12B14599400D3DF08"
                BuildableName = "NotesTests.xctest"
                BlueprintName = "NotesTests"
                ReferencedContainer = "container:Notes.xcodeproj">

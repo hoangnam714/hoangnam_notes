@@ -11,4 +11,5 @@ class LoginViewModel: ObservableObject {
     @Published var userName: String = ""
     @Published var passWord: String = ""
     @Published var error: String? = nil
+    @Published var isSignUp: Bool = false
 }

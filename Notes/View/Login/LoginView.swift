@@ -15,27 +15,53 @@ struct LoginView: View {
         GeometryReader { proxy in
             ScrollView {
                 VStack {
-                    VStack {
-                        TextField("User Name", text: $vm.userName)
-                            .frame(height: 35)
-                            .accessibilityIdentifier("tf_user_name")
-                        Divider()
-                        TextField("PassWord", text: $vm.passWord)
-                            .frame(height: 35)
-                            .accessibilityIdentifier("tf_pass_word")
+                    Text("Login")
+                        .font(.system(size: 42, weight: .bold))
+                        .padding(.vertical, 50)
+                    VStack(alignment: .leading) {
+                        Text("User Name")
+                            .font(.system(size: 16))
+                        HStack {
+                            Image(systemName: "person")
+                                .font(.system(size: 20))
+                                .opacity(0.5)
+                            TextField("Type your username", text: $vm.userName)
+                                .frame(height: 45)
+                                .tint(Color.gray)
+                                .accessibilityIdentifier("UserName")
+                        }
+                        .padding(.horizontal, 5)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.gray, lineWidth: 1)
+                        }
+                        Text("Password")
+                            .font(.system(size: 16))
+                            .padding(.top, 15)
+                        HStack {
+                            Image(systemName: "lock")
+                                .font(.system(size: 20))
+                                .opacity(0.5)
+                            TextField("Type you password", text: $vm.passWord)
+                                .frame(height: 45)
+                                .tint(Color.gray)
+                                .accessibilityIdentifier("Password")
+                        }
+                        .padding(.horizontal, 5)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.gray, lineWidth: 1)
+                        }
                     }
-                    .padding(25)
-                    .background {
-                        RoundedRectangle(cornerRadius: 15)
-                            .fill(Color.gray.opacity(0.1))
-                    }
-                    .padding(.horizontal, 15)
+                    .padding(.horizontal, 40)
                     
                     if let error = vm.error {
                         Text(error)
                             .font(.caption)
                             .foregroundStyle(.red)
+                            .accessibilityIdentifier("Error")
                     }
+                    
                     Button {
                         if vm.userName != "", vm.passWord != "" {
                             let userID = UUID().uuidString
@@ -50,16 +76,23 @@ struct LoginView: View {
                         }
                     } label: {
                         Text("Sign Up")
+                            .font(.system(size: 20, weight: .bold))
                             .padding(15)
+                            .frame(maxWidth: .infinity)
                             .background {
-                                Color.white
-                                    .overlay {
-                                        RoundedRectangle(cornerRadius: 15)
-                                            .stroke(Color.gray, lineWidth: 1)
-                                    }
+                                RoundedRectangle(cornerRadius: 15)
+                                    .fill(Color(hex: "343436"))
                             }
+                            .padding(.horizontal, 40)
+                            .foregroundStyle(Color.white)
                     }
-                    .accessibilityIdentifier("btn_sign_up")
+                    .buttonStyle(.plain)
+                    .padding(.top, 150)
+                    .accessibilityIdentifier("SignUp")
+                    Text("Or \(vm.isSignUp ? "SignIn with account" : "")")
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundStyle(Color.secondary)
+                        .padding(.top, 50)
                     Button {
                         if vm.userName != "", vm.passWord != "" {
                             dataStore.login(userName: vm.userName, password: vm.passWord) { userModel in
@@ -74,10 +107,13 @@ struct LoginView: View {
                         }
                     } label: {
                         Text("Sign in")
+                            .foregroundStyle(Color.black)
+                            .font(.system(size: 18, weight: .bold))
                     }
+                    .buttonStyle(.plain)
+                    .accessibilityIdentifier("SignIn")
                 }
-                .frame(minHeight: proxy.size.height ,alignment: .center)
-                .accessibilityIdentifier("btn_sign_in")
+                .frame(minHeight: proxy.size.height ,alignment: .top)
             }
         }
     }
