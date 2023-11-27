@@ -19,20 +19,22 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct NotesApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @StateObject var dataStoreApp: DataStoreApp = .init()
+    @StateObject var dataStore: DataStore = .init()
     @AppStorage("userName") var userName: String = ""
     @AppStorage("userID") var userID: String = ""
     @AppStorage("isLogin") var isLogin: Bool = false
     
-    
     var body: some Scene {
         WindowGroup {
-            if !isLogin {
+            ZStack {
                 LoginView()
-            } else {
+                    .opacity(isLogin ? 0 : 1)
+                    .zIndex(0)
                 TabbarView()
+                    .opacity(isLogin ? 1 : 0)
+                    .zIndex(1)
             }
+            .environmentObject(dataStore)
         }
-        .environmentObject(dataStoreApp)
     }
 }

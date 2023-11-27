@@ -11,7 +11,10 @@
 		8410E7A02B0EF197009A37A0 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410E79F2B0EF197009A37A0 /* TabbarView.swift */; };
 		8410E7A22B0EF19A009A37A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8410E7A12B0EF19A009A37A0 /* Assets.xcassets */; };
 		8410E7A62B0EF19A009A37A0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8410E7A52B0EF19A009A37A0 /* Preview Assets.xcassets */; };
-		84B522852B0EF36C00DC7B65 /* DataStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B522842B0EF36C00DC7B65 /* DataStoreApp.swift */; };
+		84633F3C2B1449A3000FE416 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84633F3B2B1449A3000FE416 /* LoginViewModel.swift */; };
+		84633F3E2B1449B6000FE416 /* CreateNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84633F3D2B1449B6000FE416 /* CreateNoteViewModel.swift */; };
+		84633F402B1449C1000FE416 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84633F3F2B1449C1000FE416 /* NoteViewModel.swift */; };
+		84B522852B0EF36C00DC7B65 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B522842B0EF36C00DC7B65 /* DataStore.swift */; };
 		84B522882B0EF60100DC7B65 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 84B522872B0EF60100DC7B65 /* FirebaseAnalytics */; };
 		84B5228A2B0EF60100DC7B65 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 84B522892B0EF60100DC7B65 /* FirebaseAnalyticsOnDeviceConversion */; };
 		84B5228C2B0EF60100DC7B65 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 84B5228B2B0EF60100DC7B65 /* FirebaseAnalyticsSwift */; };
@@ -34,6 +37,8 @@
 		84B522B02B0F108C00DC7B65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B522AF2B0F108B00DC7B65 /* GoogleService-Info.plist */; };
 		84B522B42B0F3FB400DC7B65 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B522B32B0F3FB400DC7B65 /* ProfileView.swift */; };
 		84B522B72B0F420E00DC7B65 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B522B62B0F420E00DC7B65 /* LoginView.swift */; };
+		84B522BA2B1051C500DC7B65 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B522B92B1051C500DC7B65 /* Color+Extension.swift */; };
+		84B522BC2B10999000DC7B65 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B522BB2B10999000DC7B65 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,13 +48,19 @@
 		8410E7A12B0EF19A009A37A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8410E7A32B0EF19A009A37A0 /* Notes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Notes.entitlements; sourceTree = "<group>"; };
 		8410E7A52B0EF19A009A37A0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		84B522842B0EF36C00DC7B65 /* DataStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreApp.swift; sourceTree = "<group>"; };
+		84633F3B2B1449A3000FE416 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		84633F3D2B1449B6000FE416 /* CreateNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewModel.swift; sourceTree = "<group>"; };
+		84633F3F2B1449C1000FE416 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
+		84633F862B14523A000FE416 /* NotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTests.swift; sourceTree = "<group>"; };
+		84B522842B0EF36C00DC7B65 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		84B522A82B0EF8F900DC7B65 /* CreateNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteView.swift; sourceTree = "<group>"; };
 		84B522AA2B0F023400DC7B65 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
 		84B522AD2B0F025B00DC7B65 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		84B522AF2B0F108B00DC7B65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84B522B32B0F3FB400DC7B65 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		84B522B62B0F420E00DC7B65 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		84B522B92B1051C500DC7B65 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		84B522BB2B10999000DC7B65 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +95,7 @@
 			children = (
 				84B522AF2B0F108B00DC7B65 /* GoogleService-Info.plist */,
 				8410E79C2B0EF197009A37A0 /* Notes */,
+				84633F852B14523A000FE416 /* NotesTests */,
 				8410E79B2B0EF197009A37A0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,9 +112,11 @@
 			isa = PBXGroup;
 			children = (
 				8410E79D2B0EF197009A37A0 /* NotesApp.swift */,
-				84B522822B0EF34400DC7B65 /* DataStoreApp */,
-				84B522832B0EF35900DC7B65 /* View */,
+				84B522B82B1051B400DC7B65 /* Extension */,
+				84B522822B0EF34400DC7B65 /* DataStore */,
 				84B522AC2B0F024700DC7B65 /* Model */,
+				84B522832B0EF35900DC7B65 /* View */,
+				84633F3A2B144980000FE416 /* ViewModel */,
 				8410E7A12B0EF19A009A37A0 /* Assets.xcassets */,
 				8410E7A32B0EF19A009A37A0 /* Notes.entitlements */,
 				8410E7A42B0EF19A009A37A0 /* Preview Content */,
@@ -118,12 +132,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		84B522822B0EF34400DC7B65 /* DataStoreApp */ = {
+		84633F3A2B144980000FE416 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				84B522842B0EF36C00DC7B65 /* DataStoreApp.swift */,
+				84633F3B2B1449A3000FE416 /* LoginViewModel.swift */,
+				84633F3D2B1449B6000FE416 /* CreateNoteViewModel.swift */,
+				84633F3F2B1449C1000FE416 /* NoteViewModel.swift */,
 			);
-			path = DataStoreApp;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84633F852B14523A000FE416 /* NotesTests */ = {
+			isa = PBXGroup;
+			children = (
+				84633F862B14523A000FE416 /* NotesTests.swift */,
+			);
+			path = NotesTests;
+			sourceTree = "<group>";
+		};
+		84B522822B0EF34400DC7B65 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				84B522842B0EF36C00DC7B65 /* DataStore.swift */,
+			);
+			path = DataStore;
 			sourceTree = "<group>";
 		};
 		84B522832B0EF35900DC7B65 /* View */ = {
@@ -150,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				84B522AD2B0F025B00DC7B65 /* NoteModel.swift */,
+				84B522BB2B10999000DC7B65 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +201,14 @@
 				84B522B62B0F420E00DC7B65 /* LoginView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		84B522B82B1051B400DC7B65 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				84B522B92B1051C500DC7B65 /* Color+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,12 +304,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B522A92B0EF8F900DC7B65 /* CreateNoteView.swift in Sources */,
+				84B522BA2B1051C500DC7B65 /* Color+Extension.swift in Sources */,
+				84633F402B1449C1000FE416 /* NoteViewModel.swift in Sources */,
+				84633F3C2B1449A3000FE416 /* LoginViewModel.swift in Sources */,
 				84B522AE2B0F025B00DC7B65 /* NoteModel.swift in Sources */,
 				8410E7A02B0EF197009A37A0 /* TabbarView.swift in Sources */,
 				84B522B42B0F3FB400DC7B65 /* ProfileView.swift in Sources */,
+				84633F3E2B1449B6000FE416 /* CreateNoteViewModel.swift in Sources */,
 				84B522AB2B0F023400DC7B65 /* NotesView.swift in Sources */,
-				84B522852B0EF36C00DC7B65 /* DataStoreApp.swift in Sources */,
+				84B522852B0EF36C00DC7B65 /* DataStore.swift in Sources */,
 				84B522B72B0F420E00DC7B65 /* LoginView.swift in Sources */,
+				84B522BC2B10999000DC7B65 /* UserModel.swift in Sources */,
 				8410E79E2B0EF197009A37A0 /* NotesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +374,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -383,6 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -413,7 +461,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -451,7 +499,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
